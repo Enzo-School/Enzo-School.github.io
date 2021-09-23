@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 2 </title>
+</head>
+<body>
+    <p>Type In A String <br> <input type="text" id="string"><br><br> </p>
+    <button type="submit" onclick="coolFunc1()">Amount Of Charaters</button>
+    <button type="submit" onclick="coolFunc2()">Converte String To Upper Case</button> <br>
+    <button type="submit" onclick="coolFunc3()">Converte String To Lower Case</button>
+    <br>
+    <p>Type In A Number/Decimal <br> <input type="number" id="Num_id"><br><br> </p>
+    <button type="submit" onclick="coolFunc4()">Square Root</button>
+    <button type="submit" onclick="coolFunc5()">Round To The Closest 100</button> <br>
+    <button type="submit" onclick="coolFunc6()">Generate Randome Number</button>
+    <button type="submit" onclick="coolFunc7()">Find Consine Of Number</button>
+    <br>
+    <p>Date</p>
+    <button type="submit" onclick="coolFunc8()">Get The Time</button>
+    <button type="submit" onclick="coolFunc9()">Get The Day</button> <br>
+    <button type="submit" onclick="coolFunc10()">Get The Month</button>
+    <button type="submit" onclick="coolFunc11()">Get The Date</button>
+
+    <script>
+        function coolFunc1() {
+            text = document.getElementById("string").value;
+            let str = text;
+            alert (str.length);
+        }
+
+        function coolFunc2() {
+            text = document.getElementById("string").value;
+            let str = text;
+            alert (str.toUpperCase())
+        }
+
+        function coolFunc3() {
+            text = document.getElementById("string").value;
+            let str = text;
+            alert (str.toLowerCase());
+        }
+
+        function coolFunc4() {
+            Num = document.getElementById("Num_id").value;
+            alert (Math.sqrt(Num));
+        }
+
+        function coolFunc5() {
+            Num = document.getElementById("Num_id").value;
+            alert (Math.ceil(Num/100)*100);
+        }
+
+        function coolFunc6() {
+            alert (Math.random());
+        }
+
+        function coolFunc7() {
+            Num = document.getElementById("Num_id").value;
+            alert (Math.cos(Num));
+        }
+        function coolFunc8() {
+            n = new Date().getTime();
+            alert (n);
+        }
+        function coolFunc9() {
+            var d = new Date();
+            var n = d.getDay();
+            alert ("day: " + n);
+        }
+        function coolFunc10() {
+            var d = new Date();
+            var n = d.getMonth();
+            alert ("Month: " + n);
+        }
+        function coolFunc11() {
+            var d = new Date();
+            var n = d.getDate();
+            var nu = d.getMonth();
+            var num = d.getFullYear();
+            alert ("Date: " + n + "/" + nu + "/"+ num);
+        }
+    </script>
+</body>
+</html>

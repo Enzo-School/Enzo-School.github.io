@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 4 </title>
+    <style>
+        body {
+            background-image: url("Background_Task_4.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" align="center">        
+        <form id="form_id" method="post" name="myform">
+          <table>
+              <tr><td class="credentials-top">LoginID </td><td><input type="text" name="username" id="username" autofocus/></td></tr>
+              <tr><td class="credentials-top">Password </td><td><input type="password" name="password" id="password"/></td></tr>
+              <input type="button" value="Login" class="btn btn-warning" onclick="validate()"/>
+          </table>
+        </form>
+        <p align="center">The User-name Can Be Anything But The Password Has To Be VIP Or password</p>
+    </div>
+        <script>
+        
+        function validate(){
+            role = localStorage.role
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if(!password.length) return false;
+
+            var role,
+                allowedPasswords = ["VIP","password"];
+
+            if(allowedPasswords.indexOf(password) > -1){
+                localStorage.role = password;
+                window.location = "Login_Good.html";
+            }else{
+                window.location = "login-failed.html";
+            }
+
+            senduser();
+        };
+        </script>
+</body>
+</html>

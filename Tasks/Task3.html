@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 3 </title>
+</head>
+<body>
+    <table border=1>
+        <tr>
+          <th><label for="max">Maximum Number</label></th>
+          <th></th>
+          <th><label for="min">Minimum Number</label></th>
+        </tr>
+        <tr>
+          <td>
+            <select name="Numbers" id="num_id_1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select></td>
+            <td><button onclick="coolFunc()">Roll Dice</button></td>
+          <td>
+            <select name="Numbers" id="num_id_2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select></td>
+        </tr>
+
+
+    <br>
+    <br>
+    <div id="table"></div>
+    <script>
+        function coolFunc() {
+            let num_1 = document.getElementById("num_id_1");
+            num_1 = num_1.options[num_1.selectedIndex].text;
+            let num_2 = document.getElementById("num_id_2");
+            num_2 = num_2.options[num_2.selectedIndex].text;
+            let table_div = document.getElementById("table");
+            table_div.innerHTML = "";
+            var min = parseInt(num_1);
+            var max = parseInt(num_2);
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            results =  Math.floor(Math.random() * (max - min) + min);
+            results_2 =  Math.floor(Math.random() * (max - min) + min);
+            ///table_div.innerHTML += results + "<br>" + results_2 + "<br>";
+            document.getElementById("results").innerHTML = results;
+            document.getElementById("results_2").innerHTML = results_2;
+
+        }
+    </script>
+            <tr>
+                <td><a id="results_2"></a></td>
+                <td></td>
+                <td><a id="results"></a></td>
+              </tr>
+            </table>
+</body>
+</html>

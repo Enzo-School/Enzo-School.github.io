@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 5 </title>
+</head>
+<body>
+    <button onclick= "Check()" > <input type="text" id="Check" name="Check"> Check:</button>
+    <script>
+        function Check() {
+            let Check = document.getElementById("Check").value;
+            alert ("You Said "+ Check);
+        };
+    </script>
+    <br>
+    <br>
+    <br>
+
+    <label for="Col" >Number Of Coloummes: <input type="text" id="Col" name="Col">  </label> <br>
+    <br>
+    <label for="Mul" >Multiple Used is: <input type="text" id="Mul" name="Mul">  </label> <br>
+    <br>
+    <label for="ULi" >Upper Limit: <input type="text" id="ULi" name="ULi">  </label> <br>
+    <br>
+    <button onclick= "Trick()">Show Me The Trick:</button>
+
+    <script>
+        function Trick() {
+            var coloums = Number (document.getElementById("Col").value);
+            var  multiple = Number (document.getElementById("Mul").value);
+            var upper_limit = Number (document.getElementById("ULi").value);
+            var counter = 0;
+
+            var message="oi, the multiples of "+ multiple + " from 0 to " + upper_limit + " are: <br /><table border='1'><tr>";
+
+            for(var i=multiple; i<=upper_limit; i=i+multiple)
+            {
+                message=message+"<td>"+i+"<td>";
+                counter++;
+
+                if((counter&coloums)==0)
+                    message=message+"<tr><tr>";
+            }
+            document.write(message+"</tr></table>");
+            return true;
+/*
+            var tableString = "<table>",
+            body = document.getElementsByTagName('body')[0],
+            div = document.createElement('div');
+
+            Num_T = 1 * Mul;
+
+            for (row = 1; row < 101; row ++)
+            {
+
+                if (Num_T >= ULi) {
+                    break;
+                }
+
+                tableString += "<tr>";
+
+                for (col = 1; col < Col; col += 1) {
+
+                    tableString += "<td>" + Num_T + "</td>";
+                }
+                tableString += "</tr>";
+            }
+
+            tableString += "</table>";
+            div.innerHTML = tableString;
+            body.appendChild(div);
+*/
+        };
+    </script>
+</body>
+</html>

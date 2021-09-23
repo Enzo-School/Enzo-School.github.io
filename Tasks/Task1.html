@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 1 </title>
+</head>
+<body>
+    <h1>Multiplication Table</h1>
+    <P>
+        Please select a number and  click submit and see the multiplication table
+    </P>
+    <select name="Numbers" id="num_id">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="coolFunc()">submit</button>
+    <div id="table"></div>
+
+    <script>
+        function coolFunc() {
+    	    let num_id = document.getElementById("num_id").value;
+            let table_div = document.getElementById("table");
+            table_div.innerHTML = "";
+            let n = 0;
+
+            while (n < 12) {
+                n++;
+                let x = num_id;
+                let y = n;
+                let z = x * y;
+                table_div.innerHTML += z + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
